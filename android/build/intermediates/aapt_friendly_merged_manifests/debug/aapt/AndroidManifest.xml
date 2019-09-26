@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.tappayment"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="19"
+        android:targetSdkVersion="28" />
+
+    <application>
+        <activity
+            android:name="com.tappayment.RNTapPaymentActivity"
+            android:parentActivityName="com.tappayment.MainActivity"
+            android:theme="@style/TapTheme" />
+    </application>
+
+</manifest>
