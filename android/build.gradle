@@ -42,6 +42,6 @@ repositories {
 
 dependencies {
     compile 'com.facebook.react:react-native:+'
-    implementation 'com.github.Tap-Payments:goSellSDK-Android:2.4.1'
+    implementation 'com.github.Tap-Payments:goSellSDK-AndroidX:3.2.2'
 }
   
