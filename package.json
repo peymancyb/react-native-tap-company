@@ -1,6 +1,6 @@
 {
   "name": "react-native-tap-payment",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "React Native Tap Payment binding for Android platform",
   "main": "index.js",
   "scripts": {
