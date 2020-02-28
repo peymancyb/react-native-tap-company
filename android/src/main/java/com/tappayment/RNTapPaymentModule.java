@@ -72,7 +72,11 @@ public class RNTapPaymentModule extends ReactContextBaseJavaModule {
     intent.putExtra("UILanguage", readableMap.getString("UILanguage"));
     intent.putExtra("PostUrl", readableMap.getString("PostUrl"));
     intent.putExtra("transactionMode", readableMap.getString("transactionMode"));
-
+    if(readableMap.hasKey("cardType")){
+      intent.putExtra("cardType", readableMap.getString("cardType"));
+    } else {
+      intent.putExtra("cardType", "");
+    }
     ReadableMap Customer = readableMap.getMap("Customer");
 
     intent.putExtra("firstName", Customer.getString("firstName"));

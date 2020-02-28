@@ -30,6 +30,7 @@ import company.tap.gosellapi.open.enums.AppearanceMode;
 
 import company.tap.gosellapi.open.controllers.ThemeObject;
 import company.tap.gosellapi.open.controllers.SDKSession;
+import company.tap.gosellapi.open.enums.CardType;
 import company.tap.gosellapi.open.models.CardsList;
 import company.tap.gosellapi.open.models.TapCurrency;
 import company.tap.gosellapi.open.enums.TransactionMode;
@@ -119,6 +120,9 @@ public class RNTapPaymentActivity extends AppCompatActivity implements SessionDe
         String PostUrl = extras.getString("PostUrl");
         String Currency = extras.getString("Currency");
         String transactionMode = extras.getString("transactionMode").equals("") ? "AUTHORIZE_CAPTURE" : extras.getString("transactionMode");
+        String cardType = extras.getString("cardType");
+
+        System.out.println("cardType is : ______  " + cardType);
 
         // Instantiate SDK Session
         if (sdkSession == null)
@@ -130,6 +134,14 @@ public class RNTapPaymentActivity extends AppCompatActivity implements SessionDe
 
         // initiate PaymentDataSource
         sdkSession.instantiatePaymentDataSource(); // ** Required **
+
+        // setting the card type if type card exists
+        if(cardType.equals("CREDIT")){
+            sdkSession.setCardType(CardType.CREDIT);
+        }
+        if(cardType.equals("DEBIT")){
+          sdkSession.setCardType(CardType.DEBIT);
+        }
 
         // set transaction currency associated to your account
         sdkSession.setTransactionCurrency(new TapCurrency(Currency)); // ** Required **
